@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Armazém do Chop</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0e0e0e;
+      color: #eee;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(90deg, #111, #222);
+      color: #ffc107;
+      padding: 20px;
+      text-align: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.7);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    .carousel {
+      position: relative;
+      max-width: 700px;
+      margin: 100px auto 0;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    }
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .slides img {
+      width: 700px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background 0.3s;
+    }
+    .prev:hover, .next:hover {
+      background: rgba(0,0,0,0.8);
+    }
+    .prev { left: 10px; }
+    .next { right: 10px; }
+    .thumbnails {
+      display: flex;
+      justify-content: center;
+      margin-top: 8px;
+      gap: 6px;
+    }
+    .thumbnails img {
+      width: 55px;
+      height: 35px;
+      object-fit: cover;
+      cursor: pointer;
+      border-radius: 6px;
+      opacity: 0.6;
+      transition: all 0.3s;
+    }
+    .thumbnails img.active,
+    .thumbnails img:hover {
+      opacity: 1;
+      border: 2px solid #ffc107;
+    }
+    section {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #ffc107;
+      font-size: 1.6rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #1b1b1b;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card h3 {
+      color: #ffc107;
+      margin-top: 0;
+    }
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🍺 Armazém do Chop</h1>
+  </header>
+
+  <div class="carousel">
+    <div class="slides">
+      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Chopes gelados">
+      <img src="https://images.unsplash.com/photo-1516455207990-7a41ce80f7ee" alt="Ambiente bar">
+      <img src="https://images.unsplash.com/photo-1527169402691-a3d2b7b51d43" alt="Amigos brindando">
+    </div>
+    <button class="prev">❮</button>
+    <button class="next">❯</button>
+  </div>
+  <div class="thumbnails">
+    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Chopes gelados">
+    <img src="https://images.unsplash.com/photo-1516455207990-7a41ce80f7ee" alt="Ambiente bar">
+    <img src="https://images.unsplash.com/photo-1527169402691-a3d2b7b51d43" alt="Amigos brindando">
+  </div>
+
+  <section>
+    <h2>🍻 Sobre Nós</h2>
+    <p>O Armazém do Chop é o ponto de encontro ideal para quem busca um ambiente aconchegante, música de qualidade e claro, o melhor chope artesanal da cidade. Nossa missão é oferecer momentos inesquecíveis para você e seus amigos.</p>
+  </section>
+
+  <section>
+    <h2>📖 Cardápio</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Chopes Artesanais</h3>
+        <p>Pilsen, IPA, Weiss e muito mais servidos sempre gelados.</p>
+      </div>
+      <div class="card">
+        <h3>Petiscos</h3>
+        <p>Porções crocantes, tábuas de frios e opções vegetarianas.</p>
+      </div>
+      <div class="card">
+        <h3>Drinks Exclusivos</h3>
+        <p>Receitas autorais preparadas por nossos bartenders.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>⏰ Horários</h2>
+    <p style="text-align:center;">Terça a Domingo • 17h às 02h</p>
+  </section>
+
+  <section>
+    <h2>📍 Contato</h2>
+    <p style="text-align:center;">
+      Rua Central, 123 - Cidade Exemplo<br>
+      📞 (00) 1234-5678<br>
+      📧 contato@armazemdochop.com
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Armazém do Chop - Todos os direitos reservados</p>
+  </footer>
+
+  <script>
+    const slides = document.querySelector('.slides');
+    const slideImgs = document.querySelectorAll('.slides img');
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+    const thumbs = document.querySelectorAll('.thumbnails img');
+
+    let index = 0;
+
+    function showSlide(i) {
+      index = (i + slideImgs.length) % slideImgs.length;
+      slides.style.transform = `translateX(${-index * 700}px)`;
+      thumbs.forEach(t => t.classList.remove('active'));
+      thumbs[index].classList.add('active');
+    }
+
+    prev.addEventListener('click', () => showSlide(index - 1));
+    next.addEventListener('click', () => showSlide(index + 1));
+
+    thumbs.forEach((thumb, i) => {
+      thumb.addEventListener('click', () => showSlide(i));
+    });
+
+    setInterval(() => showSlide(index + 1), 4000);
+
+    showSlide(0);
+  </script>
+</body>
+</html>
